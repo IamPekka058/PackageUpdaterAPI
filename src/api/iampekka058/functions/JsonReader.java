@@ -27,7 +27,23 @@ public class JsonReader {
         } finally {
             is.close();
         }
+    }
 
-
+    public static JSONObject readJsonFromPath(String path){
+        try {
+            InputStream is = new FileInputStream(new File(path));
+            try{
+                BufferedReader rd = new BufferedReader(new InputStreamReader(is, Charset.forName("UTF-8")));
+                String jsonText = readAll(rd);
+                JSONObject json = new JSONObject(jsonText);
+                return json;
+            } catch (IOException e) {
+                e.printStackTrace();
+            }finally {
+                is.close();
+            }
+        } catch (IOException e) {
+        }
+        return null;
     }
 }
