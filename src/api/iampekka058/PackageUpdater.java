@@ -12,8 +12,10 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.nio.channels.Channels;
+import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.zip.CRC32;
 
 public class PackageUpdater {
 
@@ -25,13 +27,15 @@ public class PackageUpdater {
             File old = new File(path+name);
             if(old.exists()) old.delete();
             System.out.println("Downloading Package...");
-            System.out.println(path);
             FileOutputStream fos = new FileOutputStream(path+name+".zip");
             fos.getChannel().transferFrom(Channels.newChannel(new URL(this.url+"/"+name+"/latest/"+name+".zip").openStream()), 0, Long.MAX_VALUE);
             fos.close();
             System.out.println("Finished downloading Package!");
             Zip.unZip(Paths.get(path)+"/"+name+".zip",path+name);
             File zipped_file = new File(path+name+".zip");
+            CRC32 crc32 = new CRC32();
+            crc32.update(Files.readAllBytes(zipped_file.toPath()));
+            System.out.println("Checksum:"+crc32.getValue());
             if(zipped_file.exists()) zipped_file.delete();
         } catch (IOException e) {
             e.printStackTrace();
