@@ -10,6 +10,7 @@ import java.net.URLConnection;
 import java.util.ArrayList;
 
 public class Check {
+
     public static boolean packageExists(String url, String name) {
         try {
             URLConnection c = new URL(url+name+"/latest/"+name+".zip").openConnection();
