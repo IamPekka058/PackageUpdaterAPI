@@ -16,6 +16,8 @@ If you want to see an example package/module go to the "Example" folder. The url
 ```java
 //Creating a instance of the PackageUpdater
 PackageUpdater packageupdater = new PackageUpdater(path, url);
+//Example parameters
+PackageUpdater packageupdater = new PackageUpdater("./packages/", "https://www.example.com/");
 
 //To get all installed packages/modules just call getAllLocalPackages()
 ArrayList<Package> packages = packageupdater.getAllLocalPackages();
