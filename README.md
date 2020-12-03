@@ -9,7 +9,7 @@ To install the API you have to go to the [release-site](https://github.com/IamPe
 If you want to see an example package/module go to the "Example" folder. The url of the ExamplePackage would look like "https://www.example.com/ExamplePackage/latest/ExamplePackage.zip". You will have to create a json file called "info.json" with following parameters: 
 ```json
 {
-    "version":"test_version" //supports any strings like pre-v.0.1
+    "version":"test_version"
 }
 ```
 ### Examples
