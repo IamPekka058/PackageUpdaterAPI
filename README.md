@@ -6,7 +6,7 @@ The PackageUpdaterAPI is a simple way to load packages/modules from your webspac
 To install the API you have to go to the [release-site](https://github.com/IamPekka058/PackageUpdaterAPI/releases/latest/) and download the jar file under "Assets". For the next step you have to include the API in your project.
 
 #### Structure of a package module
-If you want to see an example package/module go to the "Example" folder. The url of the ExamplePackage would look like "https://www.example.com/ExamplePackage/latest/ExamplePackage.zip". You will have to create a json file called "info.json" with following parameters: 
+If you want to see an example package/module go to the "Example" folder. The url of the ExamplePackage would look like "https://www.example.com/ExamplePackage/latest/ExamplePackage.zip". You will have to create a json file called "info.json" like the following example: 
 ```json
 {
     "version":"test_version"
