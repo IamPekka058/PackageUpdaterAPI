@@ -4,7 +4,6 @@ import api.iampekka058.PackageUpdater;
 import api.iampekka058.functions.Check;
 import api.iampekka058.functions.JsonReader;
 import org.json.JSONObject;
-import org.jsoup.Jsoup;
 
 import java.io.IOException;
 
